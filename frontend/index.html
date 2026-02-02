@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welfare Notification System</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welfare Notification System</h1>
+      <p>CM Karyalayam – Pension & Scheme Management</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Beneficiaries</h2>
+        <button onclick="loadBeneficiaries()">Load Beneficiaries</button>
+        <table id="beneficiaryTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Scheme</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Deliver Pension</h2>
+        <input type="number" id="beneficiaryId" placeholder="Beneficiary ID" />
+        <input type="date" id="deliveryDate" />
+        <button onclick="deliverPension()">Mark as Delivered</button>
+      </section>
+
+      <section class="card">
+        <h2>Pension Schedule (Sunday / Holiday)</h2>
+
+        <select id="scheduleOption">
+          <option value="">-- Select Delivery Date --</option>
+          <option value="31">Deliver on 31st (Advance)</option>
+          <option value="2">Deliver on 2nd (Postpone)</option>
+        </select>
+
+        <button onclick="saveSchedule()">Save Schedule</button>
+      </section>
+
+      <section class="card">
+        <h2>Upload Beneficiaries (Excel)</h2>
+        <input type="file" id="excelFile">
+        <button onclick="uploadExcel()">Upload</button>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
